@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databases>
+    <database type="mysql">
+        <driver>com.mysql.jdbc.Driver</driver>
+        <url>jdbc:mysql://114.113.158.209:3306/hms</url>
+        <user>root</user>
+        <password>chnihms01server</password>
+    </database>
+</databases>

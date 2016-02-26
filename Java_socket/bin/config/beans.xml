@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+    <bean
+        name="IBP88AService"
+        class="com.chni.bp88a_server.service.BP88AServiceImpl" /> 
+    <bean
+        name="IBP88ADao"
+        class="com.chni.bp88a_server.dao.BP88ADaoImpl" /> 
+</beans>
