@@ -1,5 +1,25 @@
 # SocketSample
 该项目是一个sim卡的硬件设备，使用mina框架读取硬件设备
+#服务器的配置：
+public class BP88ATask {
+	private static final Logger log = Logger.getLogger(BP88ATask.class);
+
+	public static void main(String[] args) {
+		try {
+			NioSocketAcceptor acceptor = new NioSocketAcceptor();
+			acceptor.setHandler(new TcpServer());
+			// 设置配置
+			acceptor.getSessionConfig().setReadBufferSize(2048);
+			acceptor.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 10);
+//			acceptor.getSessionConfig().setKeepAlive(true);
+			acceptor.bind(new InetSocketAddress(TcpServer.PORT));
+			log.info("TCP服务启动，端口：" + TcpServer.PORT);
+		} catch (Exception e) {
+			log.error("服务器启动异常", e);
+		}
+	}
+}
+
 #服务器Tcpserver
 public class TcpServer extends IoHandlerAdapter {
 
@@ -75,3 +95,5 @@ public class TcpServer extends IoHandlerAdapter {
 	}
 
 }
+
+
